@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import { DollarSign, Landmark, Mail, Rss, User } from "lucide-react";
 import heroImage from "@/assets/hero-img.svg";
 import image1 from "@/assets/image1.png";
@@ -7,6 +9,7 @@ import {
   CompanyInfiniteScroll,
   Container,
   HeighLightText,
+  MorphedSVG,
   TestimonialCard,
 } from "@/components";
 import { Button } from "@/components/ui/button";
@@ -15,22 +18,62 @@ import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { testimonials } from "@/constants";
 
+const defaultAnimations = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
+const swipeAnimations = {
+  hidden: {
+    x: 100,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+  },
+};
+
 const Home = () => {
   return (
     <>
-      <section className='w-11/12 mt-40 px-6 flex gap-4 justify-center'>
-        <div className='w-[58%] flex flex-col items-start gap-8'>
-          <h1 className='text-6xl font-semibold'>
+      <section className='w-11/12 mt-40 px-6 flex gap-4 justify-center relative'>
+        <MorphedSVG
+          className='absolute inset-0 -top-1/2 scale-75 user-select-none'
+          aria-hidden
+        />
+        <motion.div
+          className='w-[58%] flex flex-col items-start gap-8 relative'
+          initial='hidden'
+          animate='visible'
+          transition={{ staggerChildren: 0.2, duration: 0.6 }}
+        >
+          <motion.h1
+            className='text-6xl font-semibold'
+            variants={defaultAnimations}
+          >
             Guiding Your <HeighLightText>Business</HeighLightText> Journey
             Through Every Terrain
-          </h1>
-          <p className='text-2xl text-dark-400'>
+          </motion.h1>
+          <motion.p
+            className='text-2xl text-dark-400'
+            variants={defaultAnimations}
+          >
             Elevating businesses with bespoke consulting across sectors.
             Tailored guidance for startups and enterprises. Your path to success
             starts here.
-          </p>
+          </motion.p>
 
-          <div className='flex gap-4'>
+          <motion.div
+            className='flex gap-4'
+            variants={defaultAnimations}
+          >
             <div className='relative bg-white shadow-lg rounded-lg'>
               <Input
                 type='email'
@@ -43,14 +86,24 @@ const Home = () => {
             <Button className='bg-navyBlue-500 py-6 px-9 text-lg text-white hover:bg-navyBlue-500/80'>
               Get Started
             </Button>
-          </div>
-        </div>
-        <div className='w-[42%] -mt-10'>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          className='w-[42%] -mt-10 relative'
+          variants={swipeAnimations}
+          initial='hidden'
+          animate='visible'
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+          }}
+        >
           <img
             src={heroImage}
             alt='Hero image'
           />
-        </div>
+        </motion.div>
       </section>
 
       <section className='my-20'>

@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   return (
-    <header className='w-full fixed inset-0 h-16 bg-transparent backdrop-blur-lg'>
+    <header className='w-full fixed inset-0 h-16 bg-transparent backdrop-blur-lg z-[100]'>
       <div className='w-11/12 mx-auto px-6'>
         <nav className=' flex justify-between items-center w-full h-16'>
           <Link
