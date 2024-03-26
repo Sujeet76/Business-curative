@@ -5,11 +5,12 @@ import logo from "@/assets/logo.png";
 import { navLinks } from "@/constants";
 import { Link, NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { Menu } from "lucide-react";
 
 const Navbar = () => {
   return (
     <header className='w-full fixed inset-0 h-16 bg-transparent backdrop-blur-lg z-[100]'>
-      <div className='w-11/12 mx-auto px-6'>
+      <div className='w-11/12 mx-auto lg:px-6 md:px-4'>
         <nav className=' flex justify-between items-center w-full h-16'>
           <Link
             to='/'
@@ -20,11 +21,12 @@ const Navbar = () => {
               alt='Business Curative'
               className='size-10 object-cover'
             />
-            <span className='text-xl font-extrabold drop-shadow-md'>
+            <span className='lg:text-xl text-xl   font-extrabold drop-shadow-md'>
               Business Curative
             </span>
           </Link>
-          <ul className='flex gap-2 flex-1 justify-center'>
+
+          <ul className='lg:flex md:flex hidden gap-2 flex-1 justify-center'>
             {navLinks.map(({ label, path }) => (
               <li key={label}>
                 <NavLink
@@ -41,7 +43,8 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <div className='flex gap-3'>
+
+          <div className='lg:flex md:flex hidden gap-3 '>
             <Button
               className='text-navyBlue-500 hover:text-navyBlue-500 text-base h-auto font-semibold'
               variant={"ghost"}
@@ -52,6 +55,13 @@ const Navbar = () => {
               Get Started
             </Button>
           </div>
+
+          <Button
+            variant={"ghost"}
+            className='lg:hidden md:hidden block'
+          >
+            <Menu />
+          </Button>
         </nav>
       </div>
     </header>

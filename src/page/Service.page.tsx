@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { ContainerMorphed, ServiceCard } from "@/components";
+import { ContainerMorphed, HeighLightText, ServiceCard } from "@/components";
 import { serviceDetails } from "@/constants";
 import {
   GraduationCap,
@@ -13,7 +13,7 @@ import {
 //     opacity: 0,
 //     y: 20,
 //   },
-//   visible: {
+//   visible{
 //     opacity: 1,
 //     y: 0,
 //   },
@@ -43,7 +43,7 @@ const Service = () => {
                   opacity: 1,
                   y: 0,
                 }}
-                viewport={{ amount: 0 }}
+                viewport={{ amount: 0.4 }}
               >
                 <ServiceCard
                   title={title}
@@ -57,12 +57,12 @@ const Service = () => {
       </section>
 
       <section className='w-11/12 mx-auto space-y-6 my-40'>
-        <h2 className='text-4xl font-semibold '>
-          Our Team Provides Valuable <br /> Services at Any Time in Any
-          Situation
+        <h2 className='lg:text-4xl text-3xl font-semibold '>
+          Our Team Provides <HeighLightText>Valuable</HeighLightText> <br />{" "}
+          Services at Any Time in Any Situation
         </h2>
 
-        <div className='flex gap-5'>
+        <div className='flex gap-5 flex-wrap'>
           <div className='space-y-4'>
             <div className='size-10 bg-navyBlue-100 text-navyBlue-500 flex items-center justify-center rounded-full p-1'>
               <GraduationCap className='size-8' />
@@ -73,7 +73,7 @@ const Service = () => {
               roadmap and timelines,Stakeholder...
             </p>
           </div>
-          <div className='space-y-2'>
+          <div className='space-y-4'>
             <div className='size-10 bg-navyBlue-100 text-navyBlue-500 flex items-center justify-center rounded-full p-1'>
               <ShieldCheck className='size-8' />
             </div>
@@ -83,9 +83,9 @@ const Service = () => {
               roadmap and timelines,Stakeholder...
             </p>
           </div>
-          <div className='space-y-2'>
+          <div className='space-y-4'>
             <div className='size-10 bg-navyBlue-100 text-navyBlue-500 flex items-center justify-center rounded-full p-1'>
-              <SquareArrowOutUpRight className='size-7' />
+              <SquareArrowOutUpRight className='size-6' />
             </div>
             <h4 className='text-xl font-bold'>Planning</h4>
             <p className='text-base font-medium'>

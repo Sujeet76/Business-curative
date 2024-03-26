@@ -43,26 +43,26 @@ const swipeAnimations = {
 const Home = () => {
   return (
     <>
-      <section className='w-11/12 mt-40 px-6 flex gap-4 justify-center relative'>
+      <section className='w-11/12 mt-40 lg:px-6 md:px-4 flex lg:flex-row md:flex-row flex-col gap-6 justify-center items-center relative'>
         <MorphedSVG
-          className='absolute inset-0 -top-1/2 scale-75 user-select-none'
+          className='absolute inset-0 lg:-top-1/2 md:-top-1/2 top-0 left-24 lg:scale-75 md:scale-90 scale-105 user-select-none'
           aria-hidden
         />
         <motion.div
-          className='w-[58%] flex flex-col items-start gap-8 relative'
+          className='lg:w-[58%] md:w-[58%] w-full flex flex-col items-start gap-8 relative'
           initial='hidden'
           animate='visible'
           transition={{ staggerChildren: 0.2, duration: 0.6 }}
         >
           <motion.h1
-            className='text-6xl font-semibold'
+            className='lg:text-6xl text-5xl lg:flex-row md:flex-row flex-col font-semibold'
             variants={defaultAnimations}
           >
             Guiding Your <HeighLightText>Business</HeighLightText> Journey
             Through Every Terrain
           </motion.h1>
           <motion.p
-            className='text-2xl text-dark-400'
+            className='lg:text-2xl text-xl  text-dark-400'
             variants={defaultAnimations}
           >
             Elevating businesses with bespoke consulting across sectors.
@@ -83,14 +83,14 @@ const Home = () => {
               <Mail className='w-6 absolute top-1/2 left-4 -translate-y-1/2 text-dark-300' />
             </div>
 
-            <Button className='bg-navyBlue-500 py-6 px-9 text-lg text-white hover:bg-navyBlue-500/80'>
+            <Button className='bg-navyBlue-500 py-6 lg:px-9 md:px-6 px-4 text-base lg:text-lg md:text-lg text-white hover:bg-navyBlue-500/80'>
               Get Started
             </Button>
           </motion.div>
         </motion.div>
 
         <motion.div
-          className='w-[42%] -mt-10 relative'
+          className='lg:w-[42%] md:w-[42%] w-full lg:-mt-10 md:-mt-10 relative'
           variants={swipeAnimations}
           initial='hidden'
           animate='visible'
@@ -106,11 +106,13 @@ const Home = () => {
         </motion.div>
       </section>
 
-      <section className='my-20'>
-        <CompanyInfiniteScroll />
+      <section className='my-20 flex justify-center items-center'>
+        <div className='w-11/12 lg:p-6 md:p-4 overflow-hidden'>
+          <CompanyInfiniteScroll />
+        </div>
       </section>
 
-      <section className='flex flex-col w-11/12 p-6 gap-20 items-center'>
+      <section className='flex flex-col w-11/12 lg:p-6 md:p-4   gap-20 items-center justify-center'>
         <Container
           direction='normal'
           subtitle='OUR EXPERTISE'
@@ -130,7 +132,7 @@ const Home = () => {
           img={image2}
           alt='alt image'
         >
-          <div className='grid grid-cols-2 gap-4 items-start place-items-start'>
+          <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4 items-start place-items-start'>
             {/* icon 1 */}
             <IconWithLabel
               label='Consulting'
@@ -178,7 +180,7 @@ const Home = () => {
       </section>
 
       {/* testimonials */}
-      <section className='w-11/12 p-6 mx-auto space-y-6 my-20'>
+      <section className='w-11/12 lg:p-6 md:p-4 mx-auto space-y-6 my-20'>
         {/* sub-heading */}
         <div className='flex gap-6 items-center'>
           <div className='text-lg font-semibold uppercase px-3 py-1 rounded-md bg-navyBlue-100 text-navyBlue-500 w-fit'>
@@ -194,13 +196,13 @@ const Home = () => {
 
         {/* para */}
         <div className='space-y-4 -mt-1'>
-          <p className='text-lg text-dark-400 text-medium w-[40%]'>
+          <p className='text-lg text-dark-400 text-medium lg:w-[40%] md:w-[50%] w-full'>
             Discover the Success Stories and Satisfaction of Clients Who Have
             Benefited from Our Expertise and Personalized Financial Guidance
           </p>
         </div>
 
-        <div className='flex gap-6'>
+        <div className='grid gap-6 lg:grid-cols-3 md:grid-cols-2 grid-cols-1'>
           {testimonials.map(({ author, post, img, review }) => (
             <TestimonialCard
               key={author}

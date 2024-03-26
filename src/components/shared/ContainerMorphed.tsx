@@ -33,13 +33,13 @@ const ContainerMorphed = ({
         aria-hidden
       />
       <motion.h1
-        className='text-5xl font-black text-dark-700 relative -mt-40'
+        className='lg:text-5xl text-4xl font-black text-dark-700 relative -mt-40'
         variants={defaultAnimations}
       >
         {heading}
       </motion.h1>
       <motion.p
-        className='text-xl text-dark-400 relative'
+        className='lg:text-xl text-lg text-dark-400 relative'
         variants={defaultAnimations}
       >
         {subheading}

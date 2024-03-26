@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className='bg-navyBlue-500 flex flex-col justify-center items-center p-6 w-full'>
-      <div className='w-11/12 grid grid-cols-5 gap-6 py-20'>
+      <div className='w-11/12 flex flex-wrap gap-6 py-20'>
         {/* first */}
-        <div className='space-y-5 col-span-2'>
+        <div className='space-y-5 lg:w-[40%]'>
           {/* logo */}
           <Link
             to='/'
@@ -34,7 +34,7 @@ const Footer = () => {
             or an established enterprise looking to scale new heights, having
             the right guidance can make all the difference.
           </p>
-          <div className='flex gap-4'>
+          <div className='flex gap-4 flex-wrap'>
             {/* link 1 */}
             <Link
               to={"#"}

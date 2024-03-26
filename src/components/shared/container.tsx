@@ -28,11 +28,13 @@ const Container = ({
   return (
     <div
       className={cn(
-        "flex justify-between gap-6",
-        direction === "reverse" && "flex-row-reverse"
+        "flex justify-between items-center gap-8 mx-auto",
+        direction === "reverse"
+          ? "lg:flex-row-reverse md:flex-row-reverse flex-col"
+          : "lg:flex-row md:flex-row flex-col"
       )}
     >
-      <div className='w-1/2 flex flex-col gap-7'>
+      <div className='lg:w-1/2 md:w-1/2 w-full flex flex-col gap-7'>
         {/* sub-heading */}
         <div className='flex gap-6 items-center'>
           <div className='text-lg font-semibold uppercase px-3 py-1 rounded-md bg-navyBlue-100 text-navyBlue-500 w-fit'>
@@ -42,7 +44,9 @@ const Container = ({
         </div>
 
         {/* heading */}
-        <h2 className='text-5xl text-dark-500 font-bold'>{heading}</h2>
+        <h2 className='lg:text-5xl text-4xl   text-dark-500 font-bold'>
+          {heading}
+        </h2>
 
         {/* para */}
         <div className='space-y-4 -mt-1'>
@@ -65,12 +69,12 @@ const Container = ({
       </div>
 
       {/* right */}
-      <div className='w-1/2'>
+      <div className='w-fit'>
         <div className='flex justify-center items-center p-6 rounded-tl-[5rem] rounded-br-[5rem] bg-navyBlue-100 w-fit'>
           <img
             src={img}
             alt={alt}
-            className='object-cover  aspect-square size-[450px]'
+            className='object-cover  aspect-square lg:size-[450px] md:size-[350px]'
           />
         </div>
       </div>

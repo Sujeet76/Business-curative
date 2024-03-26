@@ -9,18 +9,22 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ name, post, review, img }: TestimonialCardProps) => {
   return (
-    <div className='p-8 border-2 border-dark-100 rounded-sm rounded-tl-[3rem] rounded-br-[3rem]'>
+    <div className='lg:p-8 md:p-6 p-4 border-2 border-dark-100 rounded-sm rounded-tl-[3rem] rounded-br-[3rem]'>
       <div className='flex gap-4 items-center'>
-        <div className='size-16 rounded-full overflow-full'>
+        <div className='lg:size-16 md:size-14 size-12 rounded-full overflow-hidden'>
           <img
             src={img}
             alt={name}
-            className='rounded-full size-16 object-cover'
+            className='rounded-full lg:size-16 md:size-14 size-12 object-cover'
           />
         </div>
         <div className='space-y-2'>
-          <h4 className='text-lg text-dark-700 font-bold'>{name}</h4>
-          <p className='text-base text-dark-300 font-medium'>{post}</p>
+          <h4 className='lg:text-lg text-base  text-dark-700 font-bold'>
+            {name}
+          </h4>
+          <p className='lg:text-base text-sm text-dark-300 font-medium'>
+            {post}
+          </p>
         </div>
       </div>
       <p className='text-dark-400 font-medium mt-5'>{review}</p>
