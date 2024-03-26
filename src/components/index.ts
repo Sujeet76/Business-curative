@@ -7,6 +7,7 @@ import MorphedSVG from "./shared/morphed-svg";
 import TestimonialCard from "./shared/card/testimonial-card";
 import ContainerMorphed from "./shared/ContainerMorphed";
 import ServiceCard from "./shared/card/service-card";
+import { MobileNav } from "./shared/nav/mobile-nav";
 
 export {
   Navbar,
@@ -18,4 +19,5 @@ export {
   ContainerMorphed,
   TestimonialCard,
   ServiceCard,
+  MobileNav,
 };
