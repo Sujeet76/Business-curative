@@ -5,11 +5,11 @@ import logo from "@/assets/logo.png";
 import { navLinks } from "@/constants";
 import { Link, NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Menu } from "lucide-react";
+import { MobileNav } from "./mobile-nav";
 
 const Navbar = () => {
   return (
-    <header className='w-full fixed inset-0 h-16 bg-transparent backdrop-blur-lg z-[100]'>
+    <header className='w-full fixed inset-0 h-16 bg-transparent backdrop-blur-lg z-50'>
       <div className='w-11/12 mx-auto lg:px-6 md:px-4'>
         <nav className=' flex justify-between items-center w-full h-16'>
           <Link
@@ -55,13 +55,7 @@ const Navbar = () => {
               Get Started
             </Button>
           </div>
-
-          <Button
-            variant={"ghost"}
-            className='lg:hidden md:hidden block'
-          >
-            <Menu />
-          </Button>
+          <MobileNav />
         </nav>
       </div>
     </header>
